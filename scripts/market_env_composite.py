@@ -4,25 +4,37 @@ import numpy as np
 import matplotlib; matplotlib.use("Agg")
 import yfinance as yf
 from pathlib import Path
+import time
 
 START = "2014-01-01"
 THRESHOLD = 5
 SMOOTH_DAYS = 1
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 DATA_DIR.mkdir(exist_ok=True)
-
 T_SPY="SPY"; T_RSP="RSP"; T_IWM="IWM"; T_SPHB="SPHB"; T_SPLV="SPLV"
 T_HYG="HYG"; T_LQD="LQD"; T_GLD="GLD"; T_JJC="JJC"; T_VIX="^VIX"
 tickers=[T_SPY,T_RSP,T_IWM,T_SPHB,T_SPLV,T_HYG,T_LQD,T_GLD,T_JJC,T_VIX]
 
-data=yf.download(tickers,start=START,auto_adjust=True,progress=False)["Close"].ffill().bfill()
+def download_in_batches(tickers, start, batch_size=5, delay=3):
+    all_data = []
+    for i in range(0, len(tickers), batch_size):
+        batch = tickers[i:i+batch_size]
+        try:
+            data = yf.download(batch, start=start, auto_adjust=True, progress=False)
+            all_data.append(data)
+        except Exception as e:
+            print(f"خطأ في الدفعة {i}: {e}")
+        time.sleep(delay)
+    return pd.concat(all_data, axis=1) if all_data else pd.DataFrame()
+
+raw = download_in_batches(tickers, START)
+data = raw["Close"].ffill().bfill()
 
 def sma(s,n): return s.rolling(n).mean()
 def roc(s,n): return s.pct_change(n)
 def above(x,y):
     out=(x>y).astype(int)
     return out.where(np.isfinite(out),0)
-
 spy=data[T_SPY]
 signals=pd.DataFrame({
     "SPY>50":    above(spy, sma(spy,50)),
@@ -36,9 +48,7 @@ signals=pd.DataFrame({
     "JJC/GLD>50": above(data[T_JJC]/data[T_GLD], sma(data[T_JJC]/data[T_GLD],50)),
     "MOM6M>0":   (roc(spy,126)>0).astype(int),
 }).dropna()
-
 composite=signals.sum(axis=1).rolling(SMOOTH_DAYS,min_periods=1).mean()
-
 out=pd.DataFrame({
     "SPY": spy.reindex(composite.index),
     "Composite": composite,
