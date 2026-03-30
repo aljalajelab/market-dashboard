@@ -1,0 +1,126 @@
+name: Daily Market Update
+
+on:
+  schedule:
+    # كل يوم الساعة 11:30 مساءً بتوقيت الرياض (8:30 PM UTC) — بعد إغلاق السوق
+    - cron: '30 20 * * 1-5'
+  workflow_dispatch:  # تشغيل يدوي من GitHub عند الحاجة
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install yfinance pandas numpy matplotlib pyarrow plotly pillow
+
+      - name: Run SPX Regime
+        run: python scripts/spx_regime.py
+        working-directory: .
+        continue-on-error: true
+
+      - name: Run ADX Breadth
+        run: python scripts/AdxDIPlusBreadth.py
+        working-directory: .
+        continue-on-error: true
+
+      - name: Run M50 Breadth
+        run: python scripts/breadth_m50.py
+        working-directory: .
+        continue-on-error: true
+
+      - name: Run M21 Breadth
+        run: python scripts/M21.py
+        working-directory: .
+        continue-on-error: true
+
+      - name: Run MACD SPX
+        run: python scripts/MacdBreadth_Yearly_2003.py
+        working-directory: .
+        continue-on-error: true
+
+      - name: Run MACD NQ
+        run: python scripts/MacdNQ.py
+        working-directory: .
+        continue-on-error: true
+
+      - name: Run MACD NY
+        run: python scripts/MacdNY.py
+        working-directory: .
+        continue-on-error: true
+
+      - name: Run RSI Spread NY
+        run: python scripts/SpreadrsiNY.py
+        working-directory: .
+        continue-on-error: true
+
+      - name: Run MAS 10-21-50-200
+        run: python scripts/spx_mas_breadth_chart.py
+        working-directory: .
+        continue-on-error: true
+
+      - name: Run MAS 21-50-200
+        run: python scripts/spx_mas_breadth_chart_no10_v2.py
+        working-directory: .
+        continue-on-error: true
+
+      - name: Run RSI Spread SPX
+        run: python scripts/rsi_spread_live.py
+        working-directory: .
+        continue-on-error: true
+
+      - name: Run RSI50 Breadth
+        run: python scripts/breadth_rsi50_from_2003.py
+        working-directory: .
+        continue-on-error: true
+
+      - name: Run RSI60 Breadth
+        run: python scripts/breadth_rsi60_from_2003.py
+        working-directory: .
+        continue-on-error: true
+
+      - name: Run Market Env SPX
+        run: python scripts/market_env_composite.py
+        continue-on-error: true
+
+      - name: Run Market Env QQQ
+        run: python scripts/MarketEnvComposite_QQQ.py
+        continue-on-error: true
+
+      - name: Run Price Oscillator
+        run: python scripts/spx_price_oscillator.py
+        continue-on-error: true
+
+      - name: Run Seasonality 22Y
+        run: python scripts/spx500.py
+        continue-on-error: true
+
+      - name: Run Seasonality 2014
+        run: python scripts/spx500_2014.py
+        continue-on-error: true
+
+      - name: Run Presidential Cycle
+        run: python scripts/presidential_cycle.py
+        continue-on-error: true
+
+      - name: Run QQQE Seasonality
+        run: python scripts/qqqe_seasonality.py
+        continue-on-error: true
+
+      - name: Commit and push updated data
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/
+          git diff --staged --quiet || git commit -m "🤖 Auto update: $(date '+%Y-%m-%d')"
+          git push
