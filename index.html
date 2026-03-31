@@ -321,10 +321,10 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
 <!-- MAIN -->
 <main class="main">
 
-<!-- ════ REGIME ════ -->
+<!-- REGIME -->
 <div class="tab active" id="tab-regime">
   <div class="ch">
-    <div><div class="ct">S&P 500 — REGIME DETECTOR</div><div class="cs">مؤشر حالة السوق · النطاق 0–100</div></div>
+    <div><div class="ct">S&amp;P 500 — REGIME DETECTOR</div><div class="cs">مؤشر حالة السوق · النطاق 0–100</div></div>
     <div class="rbadge rb-neu" id="regime-badge">⬤ &nbsp;LOADING</div>
   </div>
   <div class="stats">
@@ -349,7 +349,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
     <div class="zlabels"><span style="color:var(--red)">RISK OFF &lt;28</span><span style="color:var(--orange)">WEAK 28–40</span><span style="color:var(--green)">BULL &gt;75</span></div>
     <div class="cw" id="cw-regime">
       <canvas id="chart-regime"></canvas>
-      <div class="lov" id="lov-regime"><div class="nodata-icon">📊</div><div class="ltext">ارفع regime.csv</div></div>
+      <div class="lov" id="lov-regime"><div class="nodata-icon">📊</div><div class="ltext">جاري التحميل...</div></div>
     </div>
   </div>
   <div class="up">
@@ -378,7 +378,6 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
   </div>
 </div>
 
-<!-- ════ GENERIC SINGLE LINE TABS ════ -->
 <!-- RSI SPREAD SPX -->
 <div class="tab" id="tab-rsi-spread">
   <div class="ch"><div><div class="ct">RSI BREADTH SPREAD — SPX</div><div class="cs">نسبة RSI≥70 ناقص RSI≤30 · من 2003</div></div></div>
@@ -391,7 +390,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
       <div class="legend"><div class="li"><div class="lc" style="background:#00c8ff"></div>Spread %</div></div>
       <div class="rbns"><button class="rbn" onclick="filterChart('rsispread',1,this)">1Y</button><button class="rbn active" onclick="filterChart('rsispread',0,this)">ALL</button></div>
     </div>
-    <div class="cw" id="cw-rsispread"><canvas id="chart-rsispread"></canvas><div class="lov" id="lov-rsispread"><div class="nodata-icon">📊</div><div class="ltext">ارفع rsi_spread_spx.csv</div></div></div>
+    <div class="cw" id="cw-rsispread"><canvas id="chart-rsispread"></canvas><div class="lov" id="lov-rsispread"><div class="nodata-icon">📊</div><div class="ltext">جاري التحميل...</div></div></div>
   </div>
   <div class="up"><div class="up-t">// UPLOAD DATA</div><div class="up-grid">
     <label class="us" id="slot-rsispread"><input type="file" accept=".csv" onchange="loadCSV(event,'rsispread')"><div class="u-icon">📁</div><div class="u-name">RSI_SPREAD_SPX.CSV</div><div class="u-status c-a" id="st-rsispread">اختر ملف</div></label>
@@ -403,7 +402,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
   <div class="ch"><div><div class="ct">RSI ≥ 50 BREADTH — SPX</div><div class="cs">نسبة الأسهم التي RSI(14) ≥ 50 · من 2003</div></div></div>
   <div class="stats"><div class="sc"><div class="sl">RSI50 %</div><div class="sv c-g" id="s-rsi50">—</div><div class="ss">آخر قراءة</div></div></div>
   <div class="cp"><div class="ct-bar"><div class="legend"><div class="li"><div class="lc" style="background:#00e676"></div>% RSI≥50</div></div><div class="rbns"><button class="rbn" onclick="filterChart('rsi50',1,this)">1Y</button><button class="rbn active" onclick="filterChart('rsi50',0,this)">ALL</button></div></div>
-  <div class="cw" id="cw-rsi50"><canvas id="chart-rsi50"></canvas><div class="lov" id="lov-rsi50"><div class="nodata-icon">📊</div><div class="ltext">ارفع rsi50.csv</div></div></div></div>
+  <div class="cw" id="cw-rsi50"><canvas id="chart-rsi50"></canvas><div class="lov" id="lov-rsi50"><div class="nodata-icon">📊</div><div class="ltext">جاري التحميل...</div></div></div></div>
   <div class="up"><div class="up-t">// UPLOAD</div><div class="up-grid"><label class="us" id="slot-rsi50"><input type="file" accept=".csv" onchange="loadCSV(event,'rsi50')"><div class="u-icon">📁</div><div class="u-name">RSI50.CSV</div><div class="u-status c-a" id="st-rsi50">اختر ملف</div></label></div></div>
 </div>
 
@@ -412,7 +411,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
   <div class="ch"><div><div class="ct">RSI ≥ 60 BREADTH — SPX</div><div class="cs">نسبة الأسهم التي RSI(14) ≥ 60 · من 2003</div></div></div>
   <div class="stats"><div class="sc"><div class="sl">RSI60 %</div><div class="sv c-o" id="s-rsi60">—</div><div class="ss">آخر قراءة</div></div></div>
   <div class="cp"><div class="ct-bar"><div class="legend"><div class="li"><div class="lc" style="background:#ff9100"></div>% RSI≥60</div></div><div class="rbns"><button class="rbn" onclick="filterChart('rsi60',1,this)">1Y</button><button class="rbn active" onclick="filterChart('rsi60',0,this)">ALL</button></div></div>
-  <div class="cw" id="cw-rsi60"><canvas id="chart-rsi60"></canvas><div class="lov" id="lov-rsi60"><div class="nodata-icon">📊</div><div class="ltext">ارفع rsi60.csv</div></div></div></div>
+  <div class="cw" id="cw-rsi60"><canvas id="chart-rsi60"></canvas><div class="lov" id="lov-rsi60"><div class="nodata-icon">📊</div><div class="ltext">جاري التحميل...</div></div></div></div>
   <div class="up"><div class="up-t">// UPLOAD</div><div class="up-grid"><label class="us" id="slot-rsi60"><input type="file" accept=".csv" onchange="loadCSV(event,'rsi60')"><div class="u-icon">📁</div><div class="u-name">RSI60.CSV</div><div class="u-status c-a" id="st-rsi60">اختر ملف</div></label></div></div>
 </div>
 
@@ -421,7 +420,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
   <div class="ch"><div><div class="ct">MAS BREADTH — SMA10›21›50›200</div><div class="cs">نسبة الأسهم التي المتوسطات متوافقة صاعدة</div></div></div>
   <div class="stats"><div class="sc"><div class="sl">MAS %</div><div class="sv c-g" id="s-mas4">—</div><div class="ss">آخر قراءة</div></div></div>
   <div class="cp"><div class="ct-bar"><div class="legend"><div class="li"><div class="lc" style="background:#00e676"></div>Breadth %</div></div><div class="rbns"><button class="rbn" onclick="filterChart('mas4',1,this)">1Y</button><button class="rbn active" onclick="filterChart('mas4',0,this)">ALL</button></div></div>
-  <div class="cw" id="cw-mas4"><canvas id="chart-mas4"></canvas><div class="lov" id="lov-mas4"><div class="nodata-icon">📊</div><div class="ltext">ارفع mas_10_21_50_200.csv</div></div></div></div>
+  <div class="cw" id="cw-mas4"><canvas id="chart-mas4"></canvas><div class="lov" id="lov-mas4"><div class="nodata-icon">📊</div><div class="ltext">جاري التحميل...</div></div></div></div>
   <div class="up"><div class="up-t">// UPLOAD</div><div class="up-grid"><label class="us" id="slot-mas4"><input type="file" accept=".csv" onchange="loadCSV(event,'mas4')"><div class="u-icon">📁</div><div class="u-name">MAS_10_21_50_200.CSV</div><div class="u-status c-a" id="st-mas4">اختر ملف</div></label></div></div>
 </div>
 
@@ -430,7 +429,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
   <div class="ch"><div><div class="ct">MAS BREADTH — SMA21›50›200</div><div class="cs">نسبة الأسهم التي MA21&gt;50&gt;200</div></div></div>
   <div class="stats"><div class="sc"><div class="sl">MAS %</div><div class="sv c-g" id="s-mas3">—</div><div class="ss">آخر قراءة</div></div></div>
   <div class="cp"><div class="ct-bar"><div class="legend"><div class="li"><div class="lc" style="background:#00e676"></div>Breadth %</div></div><div class="rbns"><button class="rbn" onclick="filterChart('mas3',1,this)">1Y</button><button class="rbn active" onclick="filterChart('mas3',0,this)">ALL</button></div></div>
-  <div class="cw" id="cw-mas3"><canvas id="chart-mas3"></canvas><div class="lov" id="lov-mas3"><div class="nodata-icon">📊</div><div class="ltext">ارفع mas_21_50_200.csv</div></div></div></div>
+  <div class="cw" id="cw-mas3"><canvas id="chart-mas3"></canvas><div class="lov" id="lov-mas3"><div class="nodata-icon">📊</div><div class="ltext">جاري التحميل...</div></div></div></div>
   <div class="up"><div class="up-t">// UPLOAD</div><div class="up-grid"><label class="us" id="slot-mas3"><input type="file" accept=".csv" onchange="loadCSV(event,'mas3')"><div class="u-icon">📁</div><div class="u-name">MAS_21_50_200.CSV</div><div class="u-status c-a" id="st-mas3">اختر ملف</div></label></div></div>
 </div>
 
@@ -439,7 +438,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
   <div class="ch"><div><div class="ct">MACD BREADTH — SPX</div><div class="cs">نسبة الأسهم التي EMA12−EMA26 &gt; 0 · من 2003</div></div></div>
   <div class="stats"><div class="sc"><div class="sl">MACD %</div><div class="sv c-a" id="s-macdspx">—</div><div class="ss">آخر قراءة</div></div></div>
   <div class="cp"><div class="ct-bar"><div class="legend"><div class="li"><div class="lc" style="background:#00c8ff"></div>MACD Breadth</div></div><div class="rbns"><button class="rbn" onclick="filterChart('macdspx',1,this)">1Y</button><button class="rbn active" onclick="filterChart('macdspx',0,this)">ALL</button></div></div>
-  <div class="cw" id="cw-macdspx"><canvas id="chart-macdspx"></canvas><div class="lov" id="lov-macdspx"><div class="nodata-icon">📊</div><div class="ltext">ارفع macd_spx.csv</div></div></div></div>
+  <div class="cw" id="cw-macdspx"><canvas id="chart-macdspx"></canvas><div class="lov" id="lov-macdspx"><div class="nodata-icon">📊</div><div class="ltext">جاري التحميل...</div></div></div></div>
   <div class="up"><div class="up-t">// UPLOAD</div><div class="up-grid"><label class="us" id="slot-macdspx"><input type="file" accept=".csv" onchange="loadCSV(event,'macdspx')"><div class="u-icon">📁</div><div class="u-name">MACD_SPX.CSV</div><div class="u-status c-a" id="st-macdspx">اختر ملف</div></label></div></div>
 </div>
 
@@ -448,7 +447,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
   <div class="ch"><div><div class="ct">ADX / DI+ BREADTH</div><div class="cs">نسبة الأسهم التي DI+(13) &gt; 25</div></div></div>
   <div class="stats"><div class="sc"><div class="sl">DI+ %</div><div class="sv c-p" id="s-adx">—</div><div class="ss">آخر قراءة</div></div></div>
   <div class="cp"><div class="ct-bar"><div class="legend"><div class="li"><div class="lc" style="background:#bb86fc"></div>ADX Breadth</div></div><div class="rbns"><button class="rbn" onclick="filterChart('adx',1,this)">1Y</button><button class="rbn active" onclick="filterChart('adx',0,this)">ALL</button></div></div>
-  <div class="cw" id="cw-adx"><canvas id="chart-adx"></canvas><div class="lov" id="lov-adx"><div class="nodata-icon">📊</div><div class="ltext">ارفع adx.csv</div></div></div></div>
+  <div class="cw" id="cw-adx"><canvas id="chart-adx"></canvas><div class="lov" id="lov-adx"><div class="nodata-icon">📊</div><div class="ltext">جاري التحميل...</div></div></div></div>
   <div class="up"><div class="up-t">// UPLOAD</div><div class="up-grid"><label class="us" id="slot-adx"><input type="file" accept=".csv" onchange="loadCSV(event,'adx')"><div class="u-icon">📁</div><div class="u-name">ADX.CSV</div><div class="u-status c-a" id="st-adx">اختر ملف</div></label></div></div>
 </div>
 
@@ -457,7 +456,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
   <div class="ch"><div><div class="ct">M50 BREADTH</div><div class="cs">نسبة الأسهم التي MA50 &gt; MA200</div></div></div>
   <div class="stats"><div class="sc"><div class="sl">M50 %</div><div class="sv c-g" id="s-m50">—</div><div class="ss">آخر قراءة</div></div></div>
   <div class="cp"><div class="ct-bar"><div class="legend"><div class="li"><div class="lc" style="background:#00e676"></div>M50 Breadth</div><div class="li"><div class="lc" style="background:#ff9100;height:1px"></div>MA10</div></div><div class="rbns"><button class="rbn" onclick="filterChart('m50',1,this)">1Y</button><button class="rbn active" onclick="filterChart('m50',0,this)">ALL</button></div></div>
-  <div class="cw" id="cw-m50"><canvas id="chart-m50"></canvas><div class="lov" id="lov-m50"><div class="nodata-icon">📊</div><div class="ltext">ارفع m50.csv</div></div></div></div>
+  <div class="cw" id="cw-m50"><canvas id="chart-m50"></canvas><div class="lov" id="lov-m50"><div class="nodata-icon">📊</div><div class="ltext">جاري التحميل...</div></div></div></div>
   <div class="up"><div class="up-t">// UPLOAD</div><div class="up-grid"><label class="us" id="slot-m50"><input type="file" accept=".csv" onchange="loadCSV(event,'m50')"><div class="u-icon">📁</div><div class="u-name">M50.CSV</div><div class="u-status c-a" id="st-m50">اختر ملف</div></label></div></div>
 </div>
 
@@ -466,7 +465,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
   <div class="ch"><div><div class="ct">M21 BREADTH</div><div class="cs">نسبة الأسهم التي MA21 &gt; MA50</div></div></div>
   <div class="stats"><div class="sc"><div class="sl">M21 %</div><div class="sv c-g" id="s-m21">—</div><div class="ss">آخر قراءة</div></div></div>
   <div class="cp"><div class="ct-bar"><div class="legend"><div class="li"><div class="lc" style="background:#00e676"></div>M21 Breadth</div></div><div class="rbns"><button class="rbn" onclick="filterChart('m21',1,this)">1Y</button><button class="rbn active" onclick="filterChart('m21',0,this)">ALL</button></div></div>
-  <div class="cw" id="cw-m21"><canvas id="chart-m21"></canvas><div class="lov" id="lov-m21"><div class="nodata-icon">📊</div><div class="ltext">ارفع m21.csv</div></div></div></div>
+  <div class="cw" id="cw-m21"><canvas id="chart-m21"></canvas><div class="lov" id="lov-m21"><div class="nodata-icon">📊</div><div class="ltext">جاري التحميل...</div></div></div></div>
   <div class="up"><div class="up-t">// UPLOAD</div><div class="up-grid"><label class="us" id="slot-m21"><input type="file" accept=".csv" onchange="loadCSV(event,'m21')"><div class="u-icon">📁</div><div class="u-name">M21.CSV</div><div class="u-status c-a" id="st-m21">اختر ملف</div></label></div></div>
 </div>
 
@@ -475,7 +474,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
   <div class="ch"><div><div class="ct">MARKET ENV COMPOSITE — SPX</div><div class="cs">10 إشارات · النطاق 0–10 · العتبة 5</div></div></div>
   <div class="stats"><div class="sc"><div class="sl">COMPOSITE</div><div class="sv c-a" id="s-envspx">—</div><div class="ss">من 10</div></div></div>
   <div class="cp"><div class="ct-bar"><div class="legend"><div class="li"><div class="lc" style="background:#00c8ff"></div>Composite</div><div class="li"><div class="lc" style="background:#00e676"></div>SPY</div></div><div class="rbns"><button class="rbn" onclick="filterChart('envspx',1,this)">1Y</button><button class="rbn active" onclick="filterChart('envspx',0,this)">ALL</button></div></div>
-  <div class="cw" id="cw-envspx"><canvas id="chart-envspx"></canvas><div class="lov" id="lov-envspx"><div class="nodata-icon">📊</div><div class="ltext">ارفع market_env_spx.csv</div></div></div></div>
+  <div class="cw" id="cw-envspx"><canvas id="chart-envspx"></canvas><div class="lov" id="lov-envspx"><div class="nodata-icon">📊</div><div class="ltext">جاري التحميل...</div></div></div></div>
   <div class="up"><div class="up-t">// UPLOAD</div><div class="up-grid"><label class="us" id="slot-envspx"><input type="file" accept=".csv" onchange="loadCSV(event,'envspx')"><div class="u-icon">📁</div><div class="u-name">MARKET_ENV_SPX.CSV</div><div class="u-status c-a" id="st-envspx">اختر ملف</div></label></div></div>
 </div>
 
@@ -484,7 +483,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
   <div class="ch"><div><div class="ct">MARKET ENV COMPOSITE — QQQ</div><div class="cs">10 إشارات ناسداك · النطاق 0–10 · العتبة 5</div></div></div>
   <div class="stats"><div class="sc"><div class="sl">COMPOSITE</div><div class="sv c-a" id="s-envqqq">—</div><div class="ss">من 10</div></div></div>
   <div class="cp"><div class="ct-bar"><div class="legend"><div class="li"><div class="lc" style="background:#00c8ff"></div>Composite</div></div><div class="rbns"><button class="rbn" onclick="filterChart('envqqq',1,this)">1Y</button><button class="rbn active" onclick="filterChart('envqqq',0,this)">ALL</button></div></div>
-  <div class="cw" id="cw-envqqq"><canvas id="chart-envqqq"></canvas><div class="lov" id="lov-envqqq"><div class="nodata-icon">📊</div><div class="ltext">ارفع market_env_qqq.csv</div></div></div></div>
+  <div class="cw" id="cw-envqqq"><canvas id="chart-envqqq"></canvas><div class="lov" id="lov-envqqq"><div class="nodata-icon">📊</div><div class="ltext">جاري التحميل...</div></div></div></div>
   <div class="up"><div class="up-t">// UPLOAD</div><div class="up-grid"><label class="us" id="slot-envqqq"><input type="file" accept=".csv" onchange="loadCSV(event,'envqqq')"><div class="u-icon">📁</div><div class="u-name">MARKET_ENV_QQQ.CSV</div><div class="u-status c-a" id="st-envqqq">اختر ملف</div></label></div></div>
 </div>
 
@@ -493,7 +492,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
   <div class="ch"><div><div class="ct">PRICE OSCILLATOR — SPX</div><div class="cs">نسبة الأسهم فوق SMA10</div></div></div>
   <div class="stats"><div class="sc"><div class="sl">OSC</div><div class="sv c-a" id="s-osc">—</div><div class="ss">0 → 1</div></div></div>
   <div class="cp"><div class="ct-bar"><div class="legend"><div class="li"><div class="lc" style="background:#00c8ff"></div>Oscillator</div></div><div class="rbns"><button class="rbn" onclick="filterChart('osc',1,this)">1Y</button><button class="rbn active" onclick="filterChart('osc',0,this)">ALL</button></div></div>
-  <div class="cw" id="cw-osc"><canvas id="chart-osc"></canvas><div class="lov" id="lov-osc"><div class="nodata-icon">📊</div><div class="ltext">ارفع price_oscillator.csv</div></div></div></div>
+  <div class="cw" id="cw-osc"><canvas id="chart-osc"></canvas><div class="lov" id="lov-osc"><div class="nodata-icon">📊</div><div class="ltext">جاري التحميل...</div></div></div></div>
   <div class="up"><div class="up-t">// UPLOAD</div><div class="up-grid"><label class="us" id="slot-osc"><input type="file" accept=".csv" onchange="loadCSV(event,'osc')"><div class="u-icon">📁</div><div class="u-name">PRICE_OSCILLATOR.CSV</div><div class="u-status c-a" id="st-osc">اختر ملف</div></label></div></div>
 </div>
 
@@ -502,7 +501,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
   <div class="ch"><div><div class="ct">MACD BREADTH — NASDAQ-100</div><div class="cs">نسبة أسهم NQ التي EMA12−EMA26 &gt; 0</div></div></div>
   <div class="stats"><div class="sc"><div class="sl">MACD NQ %</div><div class="sv c-a" id="s-macdnq">—</div><div class="ss">آخر قراءة</div></div></div>
   <div class="cp"><div class="ct-bar"><div class="legend"><div class="li"><div class="lc" style="background:#00c8ff"></div>NQ MACD Breadth</div></div><div class="rbns"><button class="rbn" onclick="filterChart('macdnq',1,this)">1Y</button><button class="rbn active" onclick="filterChart('macdnq',0,this)">ALL</button></div></div>
-  <div class="cw" id="cw-macdnq"><canvas id="chart-macdnq"></canvas><div class="lov" id="lov-macdnq"><div class="nodata-icon">📊</div><div class="ltext">ارفع macd_nq.csv</div></div></div></div>
+  <div class="cw" id="cw-macdnq"><canvas id="chart-macdnq"></canvas><div class="lov" id="lov-macdnq"><div class="nodata-icon">📊</div><div class="ltext">جاري التحميل...</div></div></div></div>
   <div class="up"><div class="up-t">// UPLOAD</div><div class="up-grid"><label class="us" id="slot-macdnq"><input type="file" accept=".csv" onchange="loadCSV(event,'macdnq')"><div class="u-icon">📁</div><div class="u-name">MACD_NQ.CSV</div><div class="u-status c-a" id="st-macdnq">اختر ملف</div></label></div></div>
 </div>
 
@@ -511,7 +510,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
   <div class="ch"><div><div class="ct">MACD BREADTH — NYSE</div><div class="cs">نسبة أسهم NYSE التي EMA12−EMA26 &gt; 0</div></div></div>
   <div class="stats"><div class="sc"><div class="sl">MACD NY %</div><div class="sv c-a" id="s-macdny">—</div><div class="ss">آخر قراءة</div></div></div>
   <div class="cp"><div class="ct-bar"><div class="legend"><div class="li"><div class="lc" style="background:#00c8ff"></div>NYSE MACD Breadth</div></div><div class="rbns"><button class="rbn" onclick="filterChart('macdny',1,this)">1Y</button><button class="rbn active" onclick="filterChart('macdny',0,this)">ALL</button></div></div>
-  <div class="cw" id="cw-macdny"><canvas id="chart-macdny"></canvas><div class="lov" id="lov-macdny"><div class="nodata-icon">📊</div><div class="ltext">ارفع macd_ny.csv</div></div></div></div>
+  <div class="cw" id="cw-macdny"><canvas id="chart-macdny"></canvas><div class="lov" id="lov-macdny"><div class="nodata-icon">📊</div><div class="ltext">جاري التحميل...</div></div></div></div>
   <div class="up"><div class="up-t">// UPLOAD</div><div class="up-grid"><label class="us" id="slot-macdny"><input type="file" accept=".csv" onchange="loadCSV(event,'macdny')"><div class="u-icon">📁</div><div class="u-name">MACD_NY.CSV</div><div class="u-status c-a" id="st-macdny">اختر ملف</div></label></div></div>
 </div>
 
@@ -520,7 +519,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
   <div class="ch"><div><div class="ct">RSI SPREAD — NYSE</div><div class="cs">نسبة RSI≥70 ناقص RSI≤30 · NYSE</div></div></div>
   <div class="stats"><div class="sc"><div class="sl">SPREAD NY</div><div class="sv c-a" id="s-rsiny">—</div><div class="ss">آخر قراءة</div></div></div>
   <div class="cp"><div class="ct-bar"><div class="legend"><div class="li"><div class="lc" style="background:#00c8ff"></div>RSI Spread NY</div></div><div class="rbns"><button class="rbn" onclick="filterChart('rsiny',1,this)">1Y</button><button class="rbn active" onclick="filterChart('rsiny',0,this)">ALL</button></div></div>
-  <div class="cw" id="cw-rsiny"><canvas id="chart-rsiny"></canvas><div class="lov" id="lov-rsiny"><div class="nodata-icon">📊</div><div class="ltext">ارفع rsi_spread_ny.csv</div></div></div></div>
+  <div class="cw" id="cw-rsiny"><canvas id="chart-rsiny"></canvas><div class="lov" id="lov-rsiny"><div class="nodata-icon">📊</div><div class="ltext">جاري التحميل...</div></div></div></div>
   <div class="up"><div class="up-t">// UPLOAD</div><div class="up-grid"><label class="us" id="slot-rsiny"><input type="file" accept=".csv" onchange="loadCSV(event,'rsiny')"><div class="u-icon">📁</div><div class="u-name">RSI_SPREAD_NY.CSV</div><div class="u-status c-a" id="st-rsiny">اختر ملف</div></label></div></div>
 </div>
 
@@ -528,7 +527,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
 <div class="tab" id="tab-season22">
   <div class="ch"><div><div class="ct">SPY SEASONALITY — 22 سنة</div><div class="cs">متوسط العائد التراكمي حسب يوم التداول</div></div></div>
   <div class="cp"><div class="ct-bar"><div class="legend"><div class="li"><div class="lc" style="background:#bb86fc"></div>Cumulative Return %</div></div></div>
-  <div class="cw" id="cw-season22"><canvas id="chart-season22"></canvas><div class="lov" id="lov-season22"><div class="nodata-icon">📊</div><div class="ltext">ارفع seasonality_22y.csv</div></div></div></div>
+  <div class="cw" id="cw-season22"><canvas id="chart-season22"></canvas><div class="lov" id="lov-season22"><div class="nodata-icon">📊</div><div class="ltext">جاري التحميل...</div></div></div></div>
   <div class="up"><div class="up-t">// UPLOAD</div><div class="up-grid"><label class="us" id="slot-season22"><input type="file" accept=".csv" onchange="loadCSV(event,'season22')"><div class="u-icon">📁</div><div class="u-name">SEASONALITY_22Y.CSV</div><div class="u-status c-a" id="st-season22">اختر ملف</div></label></div></div>
 </div>
 
@@ -536,7 +535,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
 <div class="tab" id="tab-season14">
   <div class="ch"><div><div class="ct">SPY SEASONALITY — 2014 → اليوم</div><div class="cs">متوسط العائد التراكمي حسب يوم التداول</div></div></div>
   <div class="cp"><div class="ct-bar"><div class="legend"><div class="li"><div class="lc" style="background:#bb86fc"></div>Cumulative Return %</div></div></div>
-  <div class="cw" id="cw-season14"><canvas id="chart-season14"></canvas><div class="lov" id="lov-season14"><div class="nodata-icon">📊</div><div class="ltext">ارفع seasonality_2014.csv</div></div></div></div>
+  <div class="cw" id="cw-season14"><canvas id="chart-season14"></canvas><div class="lov" id="lov-season14"><div class="nodata-icon">📊</div><div class="ltext">جاري التحميل...</div></div></div></div>
   <div class="up"><div class="up-t">// UPLOAD</div><div class="up-grid"><label class="us" id="slot-season14"><input type="file" accept=".csv" onchange="loadCSV(event,'season14')"><div class="u-icon">📁</div><div class="u-name">SEASONALITY_2014.CSV</div><div class="u-status c-a" id="st-season14">اختر ملف</div></label></div></div>
 </div>
 
@@ -551,7 +550,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
     <button class="ptab" onclick="showPresCycle(0,this)">All</button>
   </div>
   <div class="cp">
-  <div class="cw" id="cw-pres"><canvas id="chart-pres"></canvas><div class="lov" id="lov-pres"><div class="nodata-icon">📊</div><div class="ltext">ارفع presidential_cycle_all.csv</div></div></div></div>
+  <div class="cw" id="cw-pres"><canvas id="chart-pres"></canvas><div class="lov" id="lov-pres"><div class="nodata-icon">📊</div><div class="ltext">جاري التحميل...</div></div></div></div>
   <div class="up"><div class="up-t">// UPLOAD</div><div class="up-grid"><label class="us" id="slot-pres"><input type="file" accept=".csv" onchange="loadCSV(event,'pres')"><div class="u-icon">📁</div><div class="u-name">PRESIDENTIAL_CYCLE_ALL.CSV</div><div class="u-status c-a" id="st-pres">اختر ملف</div></label></div></div>
 </div>
 
@@ -559,7 +558,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
 <div class="tab" id="tab-qqqe">
   <div class="ch"><div><div class="ct">QQQE SEASONALITY — 22 سنة</div><div class="cs">متوسط العائد التراكمي حسب يوم التداول</div></div></div>
   <div class="cp"><div class="ct-bar"><div class="legend"><div class="li"><div class="lc" style="background:#bb86fc"></div>QQQE Cumulative %</div></div></div>
-  <div class="cw" id="cw-qqqe"><canvas id="chart-qqqe"></canvas><div class="lov" id="lov-qqqe"><div class="nodata-icon">📊</div><div class="ltext">ارفع qqqe_seasonality.csv</div></div></div></div>
+  <div class="cw" id="cw-qqqe"><canvas id="chart-qqqe"></canvas><div class="lov" id="lov-qqqe"><div class="nodata-icon">📊</div><div class="ltext">جاري التحميل...</div></div></div></div>
   <div class="up"><div class="up-t">// UPLOAD</div><div class="up-grid"><label class="us" id="slot-qqqe"><input type="file" accept=".csv" onchange="loadCSV(event,'qqqe')"><div class="u-icon">📁</div><div class="u-name">QQQE_SEASONALITY.CSV</div><div class="u-status c-a" id="st-qqqe">اختر ملف</div></label></div></div>
 </div>
 
@@ -567,30 +566,32 @@ body{background:var(--bg);color:var(--text);font-family:var(--ar);display:flex;f
 </div>
 
 <script>
-// ── CLOCK ──
+// CLOCK
 function updateClock(){
-  const d=new Date();
-  document.getElementById('clock').textContent=
+  var d = new Date();
+  document.getElementById('clock').textContent =
     d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'});
 }
-updateClock(); setInterval(updateClock,60000);
+updateClock();
+setInterval(updateClock, 60000);
 
-// ── TAB SWITCHING ──
-document.querySelectorAll('.ni').forEach(el=>{
-  el.addEventListener('click',()=>{
-    document.querySelectorAll('.ni').forEach(n=>n.classList.remove('active'));
-    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+// TAB SWITCHING
+document.querySelectorAll('.ni').forEach(function(el){
+  el.addEventListener('click', function(){
+    document.querySelectorAll('.ni').forEach(function(n){ n.classList.remove('active'); });
+    document.querySelectorAll('.tab').forEach(function(t){ t.classList.remove('active'); });
     el.classList.add('active');
-    const tab=document.getElementById('tab-'+el.dataset.tab);
+    var tab = document.getElementById('tab-' + el.dataset.tab);
     if(tab) tab.classList.add('active');
   });
 });
 
-// ── CHART STORE ──
-const charts={}, allData={};
+// CHART STORE
+var charts = {};
+var allData = {};
 
-// ── CHART CONFIG ──
-const CFG={
+// CHART CONFIG
+var CFG = {
   regime:   {col:'RegimeScore', col2:'RegimeScore_EMA10', color:'#00c8ff', color2:'#ffffff33', stat:'s-score', badge:true, reflines:[28,40,75], ymin:0, ymax:100},
   rsispread:{col:'RSI_Spread_SPX', color:'#00c8ff', stat:'s-rsispread', statB:'s-rsispread-sig', reflines:[20,-20], zero:true},
   rsi50:    {col:'RSI50_Breadth', color:'#00e676', stat:'s-rsi50', reflines:[10,50,80], ymin:0, ymax:100},
@@ -610,56 +611,51 @@ const CFG={
   season22: {col:'cum_return_pct', xCol:'tdoy', color:'#bb86fc', season:true},
   season14: {col:'cum_return_pct', xCol:'tdoy', color:'#bb86fc', season:true},
   pres:     {col:'Year_1', color:'#bb86fc', presType:true},
-  qqqe:     {col:'cum_return_pct', xCol:'tdoy', color:'#bb86fc', season:true},
+  qqqe:     {col:'cum_return_pct', xCol:'tdoy', color:'#bb86fc', season:true}
 };
 
 function getDateCol(keys){
-  return keys.find(k=>k.toLowerCase().includes('date'))||keys[0];
+  return keys.find(function(k){ return k.toLowerCase().includes('date'); }) || keys[0];
 }
 
 function buildChart(key, data){
-  allData[key]=data;
-  renderChart(key,data);
+  allData[key] = data;
+  renderChart(key, data);
 }
 
-function renderChart(key,data){
-  const cfg=CFG[key];
-  const canvas=document.getElementById('chart-'+key);
+function renderChart(key, data){
+  var cfg = CFG[key];
+  var canvas = document.getElementById('chart-' + key);
   if(!canvas) return;
 
-  const isDark=true;
-  const gridColor='rgba(255,255,255,0.04)';
-  const tickColor='#3d4f62';
+  var gridColor = 'rgba(255,255,255,0.04)';
+  var tickColor = '#3d4f62';
 
   if(charts[key]) charts[key].destroy();
 
-  const datasets=[];
+  var datasets = [];
 
-  if(cfg.season||cfg.presType){
-    // X axis = trading day number
-    const xVals=data.labels;
-    const yVals=data.values;
+  if(cfg.season || cfg.presType){
     datasets.push({
-      label:cfg.col, data:yVals, borderColor:cfg.color,
-      backgroundColor:cfg.color+'15', fill:true,
-      tension:.3, pointRadius:0, borderWidth:2
+      label: cfg.col, data: data.values, borderColor: cfg.color,
+      backgroundColor: cfg.color + '15', fill: true,
+      tension: .3, pointRadius: 0, borderWidth: 2
     });
-    if(cfg.presType&&data.values2){
-      const cols=['#00c8ff','#00e676','#ff9100','#bb86fc'];
-      const names=['Year 1','Year 2','Year 3','Year 4'];
-      data.allSeries.forEach((s,i)=>{
-        datasets.push({label:names[i],data:s,borderColor:cols[i],fill:false,tension:.3,pointRadius:0,borderWidth:1.5});
-      });
-    }
-    charts[key]=new Chart(canvas,{
-      type:'line',
-      data:{labels:xVals,datasets},
-      options:{
-        responsive:true,maintainAspectRatio:false,
-        plugins:{legend:{display:false},tooltip:{backgroundColor:'#0c0f15',borderColor:'#1a2030',borderWidth:1,titleColor:'#7a8ba0',bodyColor:'#dde4ef',titleFont:{family:'IBM Plex Mono',size:9},bodyFont:{family:'IBM Plex Mono',size:10}}},
-        scales:{
-          x:{ticks:{color:tickColor,font:{family:'IBM Plex Mono',size:9},maxTicksLimit:12},grid:{color:gridColor}},
-          y:{ticks:{color:tickColor,font:{family:'IBM Plex Mono',size:9}},grid:{color:gridColor}}
+    charts[key] = new Chart(canvas, {
+      type: 'line',
+      data: {labels: data.labels, datasets: datasets},
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: {display: false},
+          tooltip: {backgroundColor:'#0c0f15', borderColor:'#1a2030', borderWidth:1,
+            titleColor:'#7a8ba0', bodyColor:'#dde4ef',
+            titleFont:{family:'IBM Plex Mono', size:9},
+            bodyFont:{family:'IBM Plex Mono', size:10}}
+        },
+        scales: {
+          x: {ticks:{color:tickColor, font:{family:'IBM Plex Mono',size:9}, maxTicksLimit:12}, grid:{color:gridColor}},
+          y: {ticks:{color:tickColor, font:{family:'IBM Plex Mono',size:9}}, grid:{color:gridColor}}
         }
       }
     });
@@ -668,201 +664,230 @@ function renderChart(key,data){
 
   // TIME SERIES
   datasets.push({
-    label:cfg.col, data:data.values, borderColor:cfg.color,
-    backgroundColor:cfg.color+'10', fill:true,
-    tension:.3, pointRadius:0, borderWidth:2, order:1
+    label: cfg.col, data: data.values, borderColor: cfg.color,
+    backgroundColor: cfg.color + '10', fill: true,
+    tension: .3, pointRadius: 0, borderWidth: 2, order: 1
   });
-  if(cfg.col2&&data.values2){
+  if(cfg.col2 && data.values2){
     datasets.push({
-      label:cfg.col2, data:data.values2, borderColor:cfg.color2||'#ffffff33',
-      fill:false, tension:.3, pointRadius:0, borderWidth:1.5,
-      borderDash:cfg.col2?[4,4]:[], order:2
+      label: cfg.col2, data: data.values2, borderColor: cfg.color2 || '#ffffff33',
+      fill: false, tension: .3, pointRadius: 0, borderWidth: 1.5,
+      borderDash: [4,4], order: 2
     });
   }
 
-  const plugins={
-    legend:{display:false},
-    tooltip:{backgroundColor:'#0c0f15',borderColor:'#1a2030',borderWidth:1,
-      titleColor:'#7a8ba0',bodyColor:'#dde4ef',
-      titleFont:{family:'IBM Plex Mono',size:9},bodyFont:{family:'IBM Plex Mono',size:10},
-      callbacks:{label:c=>' '+(c.parsed.y!==null?c.parsed.y.toFixed(2):'—')}
-    }
-  };
-
-  const refPlugin={
-    id:'refs',
-    beforeDraw(chart){
-      const {ctx,chartArea:{left,right},scales:{y}}=chart;
-      const lines=cfg.reflines||[];
-      const cols={28:'#ff3d3d',40:'#ff9100',75:'#00e676',20:'#ff3d3d',-20:'#ff3d3d',30:'#ff3d3d',-30:'#ff3d3d',5:'#ff9100',58:'#00e676',15:'#ff3d3d',83:'#ff9100',89:'#00e676',66:'#00e676',10:'#ff3d3d',50:'#ff9100',80:'#00e676',.6:'#ff3d3d',.2:'#00e676'};
-      lines.forEach(v=>{
-        const yp=y.getPixelForValue(v);
-        ctx.save();ctx.strokeStyle=(cols[v]||'#ffffff44')+'88';ctx.lineWidth=1;ctx.setLineDash([5,4]);
-        ctx.beginPath();ctx.moveTo(left,yp);ctx.lineTo(right,yp);ctx.stroke();ctx.restore();
+  var refPlugin = {
+    id: 'refs',
+    beforeDraw: function(chart){
+      var ctx = chart.ctx;
+      var chartArea = chart.chartArea;
+      var y = chart.scales.y;
+      var lines = cfg.reflines || [];
+      var cols = {28:'#ff3d3d',40:'#ff9100',75:'#00e676',20:'#ff3d3d',-20:'#ff3d3d',
+        30:'#ff3d3d',-30:'#ff3d3d',5:'#ff9100',58:'#00e676',15:'#ff3d3d',83:'#ff9100',
+        89:'#00e676',66:'#00e676',10:'#ff3d3d',50:'#ff9100',80:'#00e676',
+        0.6:'#ff3d3d',0.2:'#00e676'};
+      lines.forEach(function(v){
+        var yp = y.getPixelForValue(v);
+        ctx.save();
+        ctx.strokeStyle = (cols[v] || '#ffffff44') + '88';
+        ctx.lineWidth = 1;
+        ctx.setLineDash([5,4]);
+        ctx.beginPath();
+        ctx.moveTo(chartArea.left, yp);
+        ctx.lineTo(chartArea.right, yp);
+        ctx.stroke();
+        ctx.restore();
       });
       if(cfg.zero){
-        const yp=y.getPixelForValue(0);
-        ctx.save();ctx.strokeStyle='#ffffff44';ctx.lineWidth=1;ctx.setLineDash([]);
-        ctx.beginPath();ctx.moveTo(left,yp);ctx.lineTo(right,yp);ctx.stroke();ctx.restore();
+        var yp0 = y.getPixelForValue(0);
+        ctx.save();
+        ctx.strokeStyle = '#ffffff44';
+        ctx.lineWidth = 1;
+        ctx.setLineDash([]);
+        ctx.beginPath();
+        ctx.moveTo(chartArea.left, yp0);
+        ctx.lineTo(chartArea.right, yp0);
+        ctx.stroke();
+        ctx.restore();
       }
     }
   };
 
-  charts[key]=new Chart(canvas,{
-    type:'line',
-    data:{labels:data.dates,datasets},
-    options:{
-      responsive:true,maintainAspectRatio:false,
-      interaction:{mode:'index',intersect:false},
-      plugins,
-      scales:{
-        x:{ticks:{color:tickColor,font:{family:'IBM Plex Mono',size:9},maxTicksLimit:12},grid:{color:gridColor}},
-        y:{
-          min:cfg.ymin!==undefined?cfg.ymin:undefined,
-          max:cfg.ymax!==undefined?cfg.ymax:undefined,
-          ticks:{color:tickColor,font:{family:'IBM Plex Mono',size:9}},
-          grid:{color:gridColor}
+  charts[key] = new Chart(canvas, {
+    type: 'line',
+    data: {labels: data.dates, datasets: datasets},
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: {mode:'index', intersect:false},
+      plugins: {
+        legend: {display:false},
+        tooltip: {backgroundColor:'#0c0f15', borderColor:'#1a2030', borderWidth:1,
+          titleColor:'#7a8ba0', bodyColor:'#dde4ef',
+          titleFont:{family:'IBM Plex Mono',size:9},
+          bodyFont:{family:'IBM Plex Mono',size:10},
+          callbacks: {label: function(c){ return ' ' + (c.parsed.y !== null ? c.parsed.y.toFixed(2) : '—'); }}
+        }
+      },
+      scales: {
+        x: {ticks:{color:tickColor, font:{family:'IBM Plex Mono',size:9}, maxTicksLimit:12}, grid:{color:gridColor}},
+        y: {
+          min: cfg.ymin !== undefined ? cfg.ymin : undefined,
+          max: cfg.ymax !== undefined ? cfg.ymax : undefined,
+          ticks: {color:tickColor, font:{family:'IBM Plex Mono',size:9}},
+          grid: {color:gridColor}
         }
       }
     },
-    plugins:[refPlugin]
+    plugins: [refPlugin]
   });
 }
 
-// ── FILTER BY YEARS ──
-function filterChart(key,years,btn){
-  btn.closest('.rbns').querySelectorAll('.rbn').forEach(b=>b.classList.remove('active'));
+// FILTER BY YEARS
+function filterChart(key, years, btn){
+  btn.closest('.rbns').querySelectorAll('.rbn').forEach(function(b){ b.classList.remove('active'); });
   btn.classList.add('active');
-  const data=allData[key];
+  var data = allData[key];
   if(!data) return;
-  if(years===0){renderChart(key,data);return;}
-  const cutoff=new Date();cutoff.setFullYear(cutoff.getFullYear()-years);
+  if(years === 0){ renderChart(key, data); return; }
+  var cutoff = new Date();
+  cutoff.setFullYear(cutoff.getFullYear() - years);
   if(data.dates){
-    const filtered={...data,dates:[],values:[],values2:[]};
-    data.dates.forEach((d,i)=>{
-      if(new Date(d)>=cutoff){
-        filtered.dates.push(d);filtered.values.push(data.values[i]);
+    var filtered = {dates:[], values:[], values2: data.values2 ? [] : null};
+    data.dates.forEach(function(d, i){
+      if(new Date(d) >= cutoff){
+        filtered.dates.push(d);
+        filtered.values.push(data.values[i]);
         if(data.values2) filtered.values2.push(data.values2[i]);
       }
     });
-    renderChart(key,filtered);
+    renderChart(key, filtered);
   }
 }
 
-// ── PRESIDENTIAL CYCLE VIEW ──
-let presData=null;
-function showPresCycle(year,btn){
-  btn.closest('.pres-tabs').querySelectorAll('.ptab').forEach(b=>b.classList.remove('active'));
+// PRESIDENTIAL CYCLE
+var presData = null;
+function showPresCycle(year, btn){
+  btn.closest('.pres-tabs').querySelectorAll('.ptab').forEach(function(b){ b.classList.remove('active'); });
   btn.classList.add('active');
   if(!presData) return;
-  if(year===0){
-    // show all
-    renderChart('pres',{labels:presData.labels,values:presData['Year_1']||[],allSeries:[presData['Year_1'],presData['Year_2'],presData['Year_3'],presData['Year_4']],values2:true});
+  if(year === 0){
+    renderChart('pres', {labels: presData.labels, values: presData['Year_1'] || [],
+      allSeries: [presData['Year_1'], presData['Year_2'], presData['Year_3'], presData['Year_4']], values2: true});
   } else {
-    renderChart('pres',{labels:presData.labels,values:presData[`Year_${year}`]||[]});
+    renderChart('pres', {labels: presData.labels, values: presData['Year_' + year] || []});
   }
 }
 
-// ── LOAD CSV ──
-function loadCSV(event,key){
-  const file=event.target.files[0]; if(!file) return;
-  const slot=document.getElementById('slot-'+key);
-  const status=document.getElementById('st-'+key);
-  status.textContent='يتحمل...'; status.style.color='var(--accent)';
+// LOAD CSV
+function loadCSV(event, key){
+  var file = event.target.files[0];
+  if(!file) return;
+  var slot = document.getElementById('slot-' + key);
+  var status = document.getElementById('st-' + key);
+  status.textContent = 'يتحمل...';
+  status.style.color = 'var(--accent)';
 
-  Papa.parse(file,{
-    header:true, skipEmptyLines:true,
-    complete(results){
-      try{
-        const rows=results.data;
-        const keys=Object.keys(rows[0]);
-        const cfg=CFG[key];
+  Papa.parse(file, {
+    header: true, skipEmptyLines: true,
+    complete: function(results){
+      try {
+        var rows = results.data;
+        var keys = Object.keys(rows[0]);
+        var cfg = CFG[key];
 
         if(cfg.season){
-          // seasonality: x=tdoy, y=cum_return_pct
-          const xCol=keys.find(k=>k.toLowerCase().includes('tdoy'))||keys[0];
-          const yCol=keys.find(k=>k.toLowerCase().includes('cum'))||keys[2];
-          const data={
-            labels:rows.map(r=>r[xCol]),
-            values:rows.map(r=>parseFloat(r[yCol])||0)
+          var xCol = keys.find(function(k){ return k.toLowerCase().includes('tdoy'); }) || keys[0];
+          var yCol = keys.find(function(k){ return k.toLowerCase().includes('cum'); }) || keys[2];
+          var data = {
+            labels: rows.map(function(r){ return r[xCol]; }),
+            values: rows.map(function(r){ return parseFloat(r[yCol]) || 0; })
           };
-          buildChart(key,data);
+          buildChart(key, data);
         } else if(cfg.presType){
-          // presidential cycle
-          const xCol=keys.find(k=>k.toLowerCase().includes('tdoy'))||keys[0];
-          presData={labels:rows.map(r=>r[xCol])};
-          ['Year_1','Year_2','Year_3','Year_4'].forEach(yn=>{
-            const c=keys.find(k=>k.includes(yn));
-            if(c) presData[yn]=rows.map(r=>parseFloat(r[c])||0);
+          var xCol2 = keys.find(function(k){ return k.toLowerCase().includes('tdoy'); }) || keys[0];
+          presData = {labels: rows.map(function(r){ return r[xCol2]; })};
+          ['Year_1','Year_2','Year_3','Year_4'].forEach(function(yn){
+            var c = keys.find(function(k){ return k.includes(yn); });
+            if(c) presData[yn] = rows.map(function(r){ return parseFloat(r[c]) || 0; });
           });
-          const data={labels:presData.labels,values:presData['Year_1']||[]};
-          buildChart(key,data); allData[key]=data;
+          var pdata = {labels: presData.labels, values: presData['Year_1'] || []};
+          buildChart(key, pdata);
+          allData[key] = pdata;
         } else {
-          // time series
-          const dateCol=getDateCol(keys);
-          const valCol=keys.find(k=>k===cfg.col)||keys.find(k=>k.toLowerCase().includes(cfg.col.toLowerCase().split('_')[0]))||keys[1];
-          const val2Col=cfg.col2?keys.find(k=>k===cfg.col2):null;
+          var dateCol = getDateCol(keys);
+          var valCol = keys.find(function(k){ return k === cfg.col; }) ||
+            keys.find(function(k){ return k.toLowerCase().includes(cfg.col.toLowerCase().split('_')[0]); }) ||
+            keys[1];
+          var val2Col = cfg.col2 ? keys.find(function(k){ return k === cfg.col2; }) : null;
 
-          const data={
-            dates:rows.map(r=>r[dateCol]),
-            values:rows.map(r=>parseFloat(r[valCol])||null),
-            values2:val2Col?rows.map(r=>parseFloat(r[val2Col])||null):null
+          var tdata = {
+            dates: rows.map(function(r){ return r[dateCol]; }),
+            values: rows.map(function(r){ return parseFloat(r[valCol]) || null; }),
+            values2: val2Col ? rows.map(function(r){ return parseFloat(r[val2Col]) || null; }) : null
           };
 
-          // update stats
-          const last=data.values.filter(v=>v!==null).at(-1);
-          const statEl=document.getElementById(cfg.stat);
-          if(statEl&&last!==undefined) statEl.textContent=last.toFixed(last>10?1:2);
+          // update stats - آخر قيمة
+          var filteredVals = tdata.values.filter(function(v){ return v !== null; });
+          var last = filteredVals.length > 0 ? filteredVals[filteredVals.length - 1] : undefined;
+          var statEl = document.getElementById(cfg.stat);
+          if(statEl && last !== undefined) statEl.textContent = last.toFixed(last > 10 ? 1 : 2);
 
           // sidebar badge
-          const nbMap={
-            regime:'nb-regime',rsispread:'nb-rsispread',rsi50:'nb-rsi50',rsi60:'nb-rsi60',
-            mas4:'nb-mas4',mas3:'nb-mas3',macdspx:'nb-macdspx',adx:'nb-adx',
-            m50:'nb-m50',m21:'nb-m21',envspx:'nb-envspx',envqqq:'nb-envqqq',osc:'nb-osc',
-            macdnq:'nb-macdnq',macdny:'nb-macdny',rsiny:'nb-rsiny'
+          var nbMap = {
+            regime:'nb-regime', rsispread:'nb-rsispread', rsi50:'nb-rsi50', rsi60:'nb-rsi60',
+            mas4:'nb-mas4', mas3:'nb-mas3', macdspx:'nb-macdspx', adx:'nb-adx',
+            m50:'nb-m50', m21:'nb-m21', envspx:'nb-envspx', envqqq:'nb-envqqq', osc:'nb-osc',
+            macdnq:'nb-macdnq', macdny:'nb-macdny', rsiny:'nb-rsiny'
           };
-          const nbEl=document.getElementById(nbMap[key]);
-          if(nbEl&&last!==undefined){
-            nbEl.textContent=last.toFixed(1);
-            nbEl.className='nb '+(last>50?'nb-g':last>25?'nb-o':'nb-r');
+          var nbEl = document.getElementById(nbMap[key]);
+          if(nbEl && last !== undefined){
+            nbEl.textContent = last.toFixed(1);
+            nbEl.className = 'nb ' + (last > 50 ? 'nb-g' : last > 25 ? 'nb-o' : 'nb-r');
           }
 
-          // regime badge special
-          if(cfg.badge&&last!==undefined){
-            const badge=document.getElementById('regime-badge');
-            if(last>=75){badge.className='rbadge rb-on';badge.innerHTML='⬤ &nbsp;STRONG ON';}
-            else if(last>=40){badge.className='rbadge rb-neu';badge.innerHTML='⬤ &nbsp;NEUTRAL';}
-            else if(last>=28){badge.className='rbadge rb-neu';badge.innerHTML='⬤ &nbsp;WEAK';}
-            else{badge.className='rbadge rb-off';badge.innerHTML='⬤ &nbsp;RISK OFF';}
-            // sub stats
-            const ltCol=keys.find(k=>k.toLowerCase().includes('lt'));
-            const mtCol=keys.find(k=>k.toLowerCase().includes('mt'));
-            const stCol=keys.find(k=>k.toLowerCase().includes('st'));
-            if(ltCol){const v=parseFloat(rows.at(-1)[ltCol]);if(!isNaN(v))document.getElementById('s-lt').textContent=v.toFixed(1)+'%';}
-            if(mtCol){const v=parseFloat(rows.at(-1)[mtCol]);if(!isNaN(v))document.getElementById('s-mt').textContent=v.toFixed(1)+'%';}
-            if(stCol){const v=parseFloat(rows.at(-1)[stCol]);if(!isNaN(v))document.getElementById('s-st').textContent=v.toFixed(1)+'%';}
+          // regime badge
+          if(cfg.badge && last !== undefined){
+            var badge = document.getElementById('regime-badge');
+            if(last >= 75){ badge.className = 'rbadge rb-on'; badge.innerHTML = '⬤ &nbsp;STRONG ON'; }
+            else if(last >= 40){ badge.className = 'rbadge rb-neu'; badge.innerHTML = '⬤ &nbsp;NEUTRAL'; }
+            else if(last >= 28){ badge.className = 'rbadge rb-neu'; badge.innerHTML = '⬤ &nbsp;WEAK'; }
+            else { badge.className = 'rbadge rb-off'; badge.innerHTML = '⬤ &nbsp;RISK OFF'; }
+
+            var lastRow = rows[rows.length - 1];
+            var ltCol = keys.find(function(k){ return k.toLowerCase().includes('lt'); });
+            var mtCol = keys.find(function(k){ return k.toLowerCase().includes('mt'); });
+            var stCol = keys.find(function(k){ return k.toLowerCase().includes('st'); });
+            if(ltCol){ var lv = parseFloat(lastRow[ltCol]); if(!isNaN(lv)) document.getElementById('s-lt').textContent = lv.toFixed(1) + '%'; }
+            if(mtCol){ var mv = parseFloat(lastRow[mtCol]); if(!isNaN(mv)) document.getElementById('s-mt').textContent = mv.toFixed(1) + '%'; }
+            if(stCol){ var sv = parseFloat(lastRow[stCol]); if(!isNaN(sv)) document.getElementById('s-st').textContent = sv.toFixed(1) + '%'; }
           }
 
-          buildChart(key,data);
+          buildChart(key, tdata);
         }
 
-        document.getElementById('lov-'+key).style.display='none';
+        var lovEl = document.getElementById('lov-' + key);
+        if(lovEl) lovEl.style.display = 'none';
         if(slot) slot.classList.add('loaded');
-        status.textContent='✓ '+rows.length+' rows';
-        status.style.color='var(--green)';
+        status.textContent = '✓ ' + rows.length + ' rows';
+        status.style.color = 'var(--green)';
 
-      }catch(e){
+      } catch(e) {
         console.error(e);
-        status.textContent='✗ خطأ';status.style.color='var(--red)';
+        status.textContent = '✗ خطأ';
+        status.style.color = 'var(--red)';
       }
     },
-    error(){status.textContent='✗ فشل';status.style.color='var(--red)';}
+    error: function(){
+      status.textContent = '✗ فشل';
+      status.style.color = 'var(--red)';
+    }
   });
 }
 
-// ── AUTO LOAD FROM GitHub data/ ──
-const DATA_BASE = './data/';
-const AUTO_FILES = {
+// AUTO LOAD FROM GitHub data/
+var DATA_BASE = './data/';
+var AUTO_FILES = {
   regime:    'regime.csv',
   rsispread: 'rsi_spread_spx.csv',
   rsi50:     'rsi50.csv',
@@ -882,28 +907,35 @@ const AUTO_FILES = {
   season22:  'seasonality_22y.csv',
   season14:  'seasonality_2014.csv',
   pres:      'presidential_cycle_all.csv',
-  qqqe:      'qqqe_seasonality.csv',
+  qqqe:      'qqqe_seasonality.csv'
 };
 
-async function autoLoad(){
-  for(const [key,file] of Object.entries(AUTO_FILES)){
-    try{
-      const r=await fetch(DATA_BASE+file);
-      if(!r.ok) continue;
-      const text=await r.text();
-      const result=Papa.parse(text,{header:true,skipEmptyLines:true});
-      if(result.data&&result.data.length>0){
-        // simulate file load
-        const blob=new Blob([text],{type:'text/csv'});
-        const f=new File([blob],file);
-        const evt={target:{files:[f]}};
-        loadCSV(evt,key);
-      }
-    }catch(e){}
+function autoLoad(){
+  var keys = Object.keys(AUTO_FILES);
+  var i = 0;
+  function loadNext(){
+    if(i >= keys.length) return;
+    var key = keys[i];
+    var file = AUTO_FILES[key];
+    i++;
+    fetch(DATA_BASE + file)
+      .then(function(r){ if(!r.ok) throw new Error('not ok'); return r.text(); })
+      .then(function(text){
+        var result = Papa.parse(text, {header:true, skipEmptyLines:true});
+        if(result.data && result.data.length > 0){
+          var blob = new Blob([text], {type:'text/csv'});
+          var f = new File([blob], file);
+          var evt = {target:{files:[f]}};
+          loadCSV(evt, key);
+        }
+        loadNext();
+      })
+      .catch(function(){ loadNext(); });
   }
+  loadNext();
 }
-// تشغيل التحميل التلقائي بعد ثانية
-setTimeout(autoLoad,800);
+
+setTimeout(autoLoad, 800);
 </script>
 </body>
 </html>
