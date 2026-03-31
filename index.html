@@ -684,10 +684,10 @@ function renderChart(key, data){
       var chartArea = chart.chartArea;
       var y = chart.scales.y;
       var lines = cfg.reflines || [];
-      var cols = {28:'#ff3d3d',40:'#ff9100',75:'#00e676',20:'#ff3d3d',-20:'#ff3d3d',
-        30:'#ff3d3d',-30:'#ff3d3d',5:'#ff9100',58:'#00e676',15:'#ff3d3d',83:'#ff9100',
-        89:'#00e676',66:'#00e676',10:'#ff3d3d',50:'#ff9100',80:'#00e676',
-        0.6:'#ff3d3d',0.2:'#00e676'};
+      var cols = {'28':'#ff3d3d','40':'#ff9100','75':'#00e676','20':'#ff3d3d','-20':'#ff3d3d',
+        '30':'#ff3d3d','-30':'#ff3d3d','5':'#ff9100','58':'#00e676','15':'#ff3d3d','83':'#ff9100',
+        '89':'#00e676','66':'#00e676','10':'#ff3d3d','50':'#ff9100','80':'#00e676',
+        '0.6':'#ff3d3d','0.2':'#00e676'};
       lines.forEach(function(v){
         var yp = y.getPixelForValue(v);
         ctx.save();
