@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; connect-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; connect-src 'self' https://cdnjs.cloudflare.com">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Market Dashboard — aljalajelab</title>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -594,7 +594,7 @@ var allData = {};
 // CHART CONFIG
 var CFG = {
   regime:   {col:'RegimeScore', col2:'RegimeScore_EMA10', color:'#00c8ff', color2:'#ffffff33', stat:'s-score', badge:true, reflines:[28,40,75], ymin:0, ymax:100},
-  rsispread:{col:'RSI_Spread_SPX', color:'#00c8ff', stat:'s-rsispread', statB:'s-rsispread-sig', reflines:[20,-20], zero:true},
+  rsispread:{col:'RSI_Spread_SPX', color:'#00c8ff', stat:'s-rsispread', statB:'s-rsispread-sig', reflines:[20, 0-20], zero:true},
   rsi50:    {col:'RSI50_Breadth', color:'#00e676', stat:'s-rsi50', reflines:[10,50,80], ymin:0, ymax:100},
   rsi60:    {col:'RSI60_Breadth', color:'#ff9100', stat:'s-rsi60', reflines:[10,50,80], ymin:0, ymax:100},
   mas4:     {col:'MAS_10_21_50_200', color:'#00e676', stat:'s-mas4', reflines:[5,58], ymin:0, ymax:100},
@@ -608,7 +608,7 @@ var CFG = {
   osc:      {col:'Oscillator', color:'#00c8ff', stat:'s-osc', reflines:[.2,.6], ymin:0, ymax:1},
   macdnq:   {col:'MACD_NQ_Breadth', color:'#00c8ff', stat:'s-macdnq', reflines:[15,83,89], ymin:0, ymax:100},
   macdny:   {col:'MACD_NY_Breadth', color:'#00c8ff', stat:'s-macdny', reflines:[15,83,89], ymin:0, ymax:100},
-  rsiny:    {col:'RSI_Spread_NY', color:'#00c8ff', stat:'s-rsiny', reflines:[30,-30], zero:true},
+  rsiny:    {col:'RSI_Spread_NY', color:'#00c8ff', stat:'s-rsiny', reflines:[30, 0-30], zero:true},
   season22: {col:'cum_return_pct', xCol:'tdoy', color:'#bb86fc', season:true},
   season14: {col:'cum_return_pct', xCol:'tdoy', color:'#bb86fc', season:true},
   pres:     {col:'Year_1', color:'#bb86fc', presType:true},
